@@ -1,0 +1,24 @@
+{
+    "id": "1",
+    "title": "FizzBuzz",
+    "description": "1からNまでの数字を出力します。3の倍数の時は\"Fizz\"、5の倍数の时は\"Buzz\"、両方の倍数の时は\"FizzBuzz\"を出力してください。",
+    "difficulty": "easy",
+    "test_cases": [
+      {
+        "name": "basic test",
+        "input": "15",
+        "expected": "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz"
+      },
+      {
+        "name": "small number",
+        "input": "5",
+        "expected": "1\n2\nFizz\n4\nBuzz"
+      },
+      {
+        "name": "single digit",
+        "input": "3",
+        "expected": "1\n2\nFizz"
+      }
+    ],
+    "template": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\t\n\t// ここにコードを書いてください\n}"
+  }
