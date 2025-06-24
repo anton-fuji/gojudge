@@ -2,27 +2,44 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 
+	"github.com/anton-fuji/gojudge/utils"
+	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )
 
 var raretechCmd = &cobra.Command{
 	Use:   "raretech",
 	Short: "RareTECH Logo Ascii Art",
-	Long:  ``,
-	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		filename := args[0]
-		content, err := os.ReadFile(filename)
-		if err != nil {
-			fmt.Printf("Error: %v\n", err)
-			os.Exit(1)
-		}
-		fmt.Println(string(content))
+		selectType()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(raretechCmd)
+}
+
+func selectType() {
+	prompt := promptui.Select{
+		Label:     "What AsciiArt do you want to display??",
+		Items:     []string{"raretech", "raretech-logo"},
+		CursorPos: 0,
+	}
+
+	idx, result, err := prompt.Run()
+
+	if err != nil {
+		fmt.Printf("Prompt failed %v\n", err)
+		return
+	}
+
+	fmt.Printf("You choose no.%d %q\n", idx+1, result)
+
+	switch result {
+	case "raretech":
+		utils.PrintAAFromTxt("raretech.txt")
+	case "raretech-logo":
+		utils.PrintAAFromTxt("raretech-logo.txt")
+	}
 }
