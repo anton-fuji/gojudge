@@ -1,0 +1,64 @@
+{
+    "id": "2",
+    "title": "スコア評価",
+    "description": "score変数に0から100の点数を入力し、以下の基準で評価を出力するプログラムを作成してください。\n90-100点: \"A\"\n80-89点: \"B\"\n70-79点: \"C\"\n60-69点: \"D\"\n0-59点: \"F\"",
+    "difficulty": "easy",
+    "test_cases": [
+      {
+        "name": "perfect score",
+        "input": "100",
+        "expected": "A"
+      },
+      {
+        "name": "grade A",
+        "input": "95",
+        "expected": "A"
+      },
+      {
+        "name": "grade B",
+        "input": "85",
+        "expected": "B"
+      },
+      {
+        "name": "grade C",
+        "input": "75",
+        "expected": "C"
+      },
+      {
+        "name": "grade D",
+        "input": "65",
+        "expected": "D"
+      },
+      {
+        "name": "grade F",
+        "input": "45",
+        "expected": "F"
+      },
+      {
+        "name": "boundary A",
+        "input": "90",
+        "expected": "A"
+      },
+      {
+        "name": "boundary B",
+        "input": "80",
+        "expected": "B"
+      },
+      {
+        "name": "boundary C",
+        "input": "70",
+        "expected": "C"
+      },
+      {
+        "name": "boundary D",
+        "input": "60",
+        "expected": "D"
+      },
+      {
+        "name": "boundary F",
+        "input": "59",
+        "expected": "F"
+      }
+    ],
+    "template": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tvar score int\n\tfmt.Scan(&score)\n\t\n\t// ここにswitch文を使って成績評価のコードを書いてください\n}"
+  }

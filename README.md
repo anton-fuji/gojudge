@@ -44,3 +44,7 @@ go build -o gojudge
 ./gojudge check test.go -p 1 
 ```
 
+## アスキーアートの出力
+```sh
+./gojudge raretech
+```
