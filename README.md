@@ -30,7 +30,7 @@ go mod tidy
 
 #### ビルド
 ```sh
-go build -o gojudge
+make build
 ```
 
 ### 2. 基本コマンド
@@ -43,6 +43,8 @@ go build -o gojudge
 // test.goファイルに問題を書き込んでいることを想定
 ./gojudge check test.go -p 1 
 ```
+
+- この時test.goの1行目に`//go:build ignore`の追加をしてください
 
 ## アスキーアートの出力
 ```sh
